@@ -11,7 +11,7 @@ using namespace std;
 class Library {
     private:
         vector<Book> book;
-        vector<Loan> Loan;
+        vector<Loan> loan;
 
     public: 
         void addBook(const Book& book);
