@@ -43,3 +43,24 @@ void Book::returnBook() {
         cout << "Book was's borrowed." << endl;
     }
 }
+
+bool Book::getAvailability() {
+    return isAvailable;
+}
+
+void Book::setBorrowingDate() {
+    time(&borrowingDate);
+}
+
+void Book::setDueDate(int days) {
+    dueDate = borrowingDate + (days * 24 * 60 * 60);
+}
+
+time_t Book::getBorrowingDate() const {
+    return borrowingDate;
+}
+
+time_t Book::getDueDate() const {
+    return dueDate;
+}
+
