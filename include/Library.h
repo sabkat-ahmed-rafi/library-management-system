@@ -20,6 +20,7 @@ class Library {
         Book* searchBookByAuthor(const string& author);
         void displayAllBooks() const;
         void displayAllLoans() const;
+        void addLoan(const string& loanId, const string& borrower, const string& bookTitle, const string& loanDate, const string& dueDate) ;
 };
 
 

@@ -1,24 +1,27 @@
-#ifndef Load_H
-#define Load_H
+#ifndef Loan_H
+#define Loan_H
 
-#include "Book.h"
-#include "Member.h"
-#include <ctime>
+#include <string>
+using namespace std;
 
 class Loan {
-    private:
-        Book book;
-        Member member;
-        time_t borrowingDate;
-        time_t dueDate;
-    
-    public:
-        Loan(Book& book, Member member);
-        void displayLoanInfo();
-}
+private:
+    string loanID;
+    string borrower;
+    string bookTitle;
+    string loanDate;
+    string dueDate;
+
+public:
+    Loan(const string& loanID, const string& borrower, const string& bookTitle, const string& loanDate, const string& dueDate)
+        : loanID(loanID), borrower(borrower), bookTitle(bookTitle), loanDate(loanDate), dueDate(dueDate) {}
 
 
-
-
-
+    void displayLoanInfo() const;
+    string getLoanID() const { return loanID; }
+    string getBorrower() const { return borrower; }
+    string getBookTitle() const { return bookTitle; }
+    string getLoanDate() const { return loanDate; }
+    string getDueDate() const { return dueDate; }
+};
 #endif
