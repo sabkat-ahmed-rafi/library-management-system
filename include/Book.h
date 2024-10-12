@@ -16,7 +16,8 @@ class Book {
         time_t dueDate;
     
     public: 
-        Book(const string& title, const string& author, const string& ISBN);
+        Book(const string& title, const string& author, const string& ISBN)
+        : title(title), author(author), ISBN(ISBN), isAvailable(true), borrowingDate(0), dueDate(0) {}
 
         void displayInfo() const;
         bool borrowBook();

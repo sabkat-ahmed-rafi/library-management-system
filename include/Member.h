@@ -12,7 +12,8 @@ class Member {
         string membershipId;
     
     public:
-    Member(const string& name, const string& membershipId);
+    Member(const string& name, const string& membershipId)
+        : name(name), membershipId(membershipId) {};
     
     void displayMemberInfo() const;
     string getName() const { return name; }
