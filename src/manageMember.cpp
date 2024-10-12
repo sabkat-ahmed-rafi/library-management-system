@@ -1,4 +1,4 @@
-#include "ManageMember.h"
+#include "../include/ManageMember.h"
 #include <iostream>
 
 void ManageMember::addMember(const Member& newMember) {
@@ -29,7 +29,7 @@ Member* ManageMember::searchMemberById(const string& membershipId) {
 }
 
 
-Member* ManageMember::searchMemberById(const string& name) {
+Member* ManageMember::searchMemberByName(const string& name) {
     for (auto& m : member) {
         if (m.getName() == name) {
             return &m;

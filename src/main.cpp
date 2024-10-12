@@ -1,11 +1,11 @@
 #include <iostream>
 #include <string>
 
-#include "Book.h"
-#include "Library.h"
-#include "Loan.h"
-#include "ManageMember.h"
-#include "Member.h"
+#include "../include/Book.h"
+#include "../include/Library.h"
+#include "../include/Loan.h"
+#include "../include/ManageMember.h"
+#include "../include/Member.h"
 
 using namespace std;
 
@@ -22,12 +22,15 @@ void displayMenu() {
     cout << "9. Remove Member\n";
     cout << "10. Display All Books\n";
     cout << "11. Display All Members\n";
+    cout << "12. Display All Loans\n";
     cout << "0. Exit\n";
     cout << "Enter your choice: ";
 }
 
 int main() {
-    
+
+    Library library;
+    ManageMember manageMember;
 
     int choice = -1;
 
@@ -65,11 +68,13 @@ int main() {
             /* code */
             break;
         case 10:
-            /* code */
+            library.displayAllBooks();
             break;
         case 11:
-            /* code */
+            manageMember.displayAllMember();
             break;
+        case 12:
+            library.displayAllLoans();
         case 0:
             cout<< "Exiting the system.\n";
             break;        

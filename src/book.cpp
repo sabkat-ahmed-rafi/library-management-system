@@ -1,12 +1,9 @@
-#include "Book.h"
+#include "../include/Book.h"
 #include <iostream>
 #include <iomanip>
 
 using namespace std;
 
-// implementing the constructor
-Book::Book(const string& title, const string& author, const string& ISBN) 
-    : title(title), author(author), ISBN(ISBN), isAvailable(true), borrowingDate(0), dueDate(0) {}
 
 
 void Book::displayInfo() const {

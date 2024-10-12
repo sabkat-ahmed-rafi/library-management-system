@@ -1,9 +1,8 @@
-#include "Member.h"
+#include "../include/Member.h"
 #include <iostream>
 using namespace std;
 
-Member::Member(const string& name, const string& membershipId)
-    : name(name), membershipId(membershipId) {}
+
 
 void Member::displayMemberInfo() const {
     cout << "Member Name: " << name << endl;
