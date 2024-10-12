@@ -17,7 +17,7 @@ class ManageMember {
         bool removeMember(const string& membershipId);
         Member* searchMemberById(const string& membershipId);
         Member* searchMemberById(const string& name);
-        void displayAllMember()
+        void displayAllMember();
 };
 
 
