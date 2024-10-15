@@ -16,11 +16,13 @@ class Library {
     public: 
         void addBook(const Book& book);
         bool removeBook(const string& ISBN);
+        bool borrowBook(const string& ISBN);
+        bool returnBook(const string& ISBN);
         Book* searchBookByTitle(const string& title);
         Book* searchBookByAuthor(const string& author);
         void displayAllBooks() const;
         void displayAllLoans() const;
-        void addLoan(const string& loanId, const string& borrower, const string& bookTitle, const string& loanDate, const string& dueDate) ;
+        void addLoan( const string& borrower, const string& bookTitle, const string& loanDate, const string& dueDate) ;
 };
 
 
