@@ -40,9 +40,22 @@ int main() {
 
         switch (choice)
         {
-        case 1:
-            /* code */
+        case 1: {
+            string title, author, isbn;
+            cout << "Enter book title: ";
+            cin.ignore();
+            getline(cin, title);
+            cout << "Enter book author: ";
+            getline(cin, author);
+            cout << "Enter book ISBN: ";
+            getline(cin, isbn);
+
+            Book newBook(title, author, isbn);
+
+            library.addBook(newBook);
+            
             break;
+        }
         case 2:
             /* code */
             break;
