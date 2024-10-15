@@ -41,6 +41,7 @@ int main() {
         switch (choice)
         {
         case 1: {
+            // Add a book 
             string title, author, isbn;
             cout << "Enter book title: ";
             cin.ignore();
@@ -56,9 +57,21 @@ int main() {
             
             break;
         }
-        case 2:
-            /* code */
+        case 2: {
+            // Remove a book 
+            string isbn;
+            cout << "Enter ISBN to remove: ";
+            cin.ignore();
+            getline(cin, isbn); 
+
+            if(library.removeBook(isbn)) {
+                
+            } else {
+                cout << "Book not found.\n";    
+            }
+
             break;
+        }
         case 3:
             /* code */
             break;
