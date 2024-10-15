@@ -64,9 +64,7 @@ int main() {
             cin.ignore();
             getline(cin, isbn); 
 
-            if(library.removeBook(isbn)) {
-                
-            } else {
+            if(!library.removeBook(isbn)) {
                 cout << "Book not found.\n";    
             }
 
