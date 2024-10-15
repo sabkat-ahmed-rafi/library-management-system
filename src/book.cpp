@@ -9,7 +9,7 @@ using namespace std;
 void Book::displayInfo() const {
     cout << "Title: " << title << endl;
     cout << "Author: " << author << endl;
-    cout << "ISBN" << ISBN << endl;
+    cout << "ISBN " << ISBN << endl;
     cout << "Availability: " << (isAvailable ? "Available" : "Not Available") << endl;
 
         if(!isAvailable) {
