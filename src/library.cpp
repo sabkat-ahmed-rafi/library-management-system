@@ -68,10 +68,11 @@ bool Library::borrowBook(const string& isbn) {
 }
 
 
-void Library::returnBook(const string& isbn) {
+bool Library::returnBook(const string& isbn) {
     for(auto& b: book) {
         if(b.getISBN() == isbn) {
             b.returnBook();
+            return true;
         }
     }
 }

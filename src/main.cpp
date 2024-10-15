@@ -136,10 +136,20 @@ int main() {
             }
             break;
         }
-        case 6: 
+        case 6: {
             // Return book 
-            
-            break;
+             string isbn;
+             cout << "Enter book ISBN to return: ";
+             cin.ignore();
+             getline(cin, isbn);
+
+                if (library.returnBook(isbn)) {
+                    cout << "Book returned successfully!\n";
+                } else {
+                    cout << "Returning failed. Book might not have been borrowed.\n";
+                }
+                break;
+        }
         case 7: 
             /* code */
             break;
