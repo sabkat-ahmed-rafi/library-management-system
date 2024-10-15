@@ -51,6 +51,31 @@ void Library::displayAllBooks() const {
     }
 }
 
+bool Library::borrowBook(const string& isbn) {
+   for(auto& b: book) {
+    if(b.getISBN() == isbn) {
+        if(b.getAvailability()) {
+            b.borrowBook();
+            return true;
+        }
+    } else {
+        cout << "Book is already borrowed." << endl; 
+        return false;
+    }
+   }
+    cout << "Book with ISBN " << isbn << " not found." << endl;
+    return false;
+}
+
+
+void Library::returnBook(const string& isbn) {
+    for(auto& b: book) {
+        if(b.getISBN() == isbn) {
+            b.returnBook();
+        }
+    }
+}
+
 
 void Library::displayAllLoans() const {
     if (loan.empty()) {
@@ -66,8 +91,8 @@ void Library::displayAllLoans() const {
 }
 
 
-void Library::addLoan(const string& loanID, const string& borrower, const string& bookTitle, const string& loanDate, const string& dueDate) {
-    Loan newLoan(loanID, borrower, bookTitle, loanDate, dueDate);
+void Library::addLoan(const string& borrower, const string& bookTitle, const string& loanDate, const string& dueDate) {
+    Loan newLoan( borrower, bookTitle, loanDate, dueDate);
     loan.push_back(newLoan); 
     cout << "Loan added successfully!" << endl;
 }

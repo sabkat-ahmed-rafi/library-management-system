@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <ctime>
+#include <iomanip>
 
 #include "../include/Book.h"
 #include "../include/Library.h"
@@ -31,6 +33,7 @@ int main() {
 
     Library library;
     ManageMember manageMember;
+    
 
     int choice = -1;
 
@@ -71,6 +74,7 @@ int main() {
             break;
         }
         case 3: {
+            // Search by title 
             string title;
             cout << "Enter the book title: ";
             cin.ignore();
@@ -84,6 +88,7 @@ int main() {
             break;
         }
         case 4: {
+            // Search by author 
             string author;
             cout << "Enter the book title: ";
             cin.ignore();
@@ -96,11 +101,44 @@ int main() {
             }
             break;
         }
-        case 5:
-            /* code */
+        case 5: {
+            // Borrow a book 
+            string borrower, title, isbn, membershipId;
+            time_t borrowingDate;
+            time_t dueDate;
+            cout << "Enter your membership Id: ";
+            cin.ignore();
+            getline(cin, membershipId);
+            cout << "Enter borrower name to borrow: ";
+            getline(cin, borrower);
+            cout << "Enter book name: ";
+            getline(cin, title);
+            cout << "Enter the ISBN of book: ";
+            getline(cin, isbn);
+
+            borrowingDate = time(0);
+            dueDate = borrowingDate + (14 * 24 * 60 * 60);
+
+            if(!manageMember.searchMemberById(membershipId)) {
+                cout << "You are not a member of our library.";
+                break;
+            }
+            
+            ostringstream borrowingDateStr;
+            borrowingDateStr << put_time(localtime(&borrowingDate), "%Y-%m-%d");
+
+            ostringstream dueDateStr;
+            dueDateStr << put_time(localtime(&dueDate), "%Y-%m-%d");
+
+            if(library.borrowBook(isbn)) {
+                cout << "Book borrowed successfully.";
+                library.addLoan(borrower, title, borrowingDateStr.str(), dueDateStr.str());
+            }
             break;
+        }
         case 6: 
-            /* code */
+            // Return book 
+            
             break;
         case 7: 
             /* code */
