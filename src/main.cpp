@@ -70,9 +70,17 @@ int main() {
 
             break;
         }
-        case 3:
-            /* code */
+        case 3: {
+            string title;
+            cout << "Enter the book title: ";
+            cin.ignore();
+            getline(cin, title);
+
+            if(library.searchBookByTitle(title)) {
+                cout << "Book \"" << title << "\" found";
+            }
             break;
+        }
         case 4:
             /* code */
             break;
