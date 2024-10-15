@@ -150,9 +150,21 @@ int main() {
                 }
                 break;
         }
-        case 7: 
-            /* code */
+        case 7: {
+            // Add a member to the library 
+            string name, membershipId;
+            cout << "Enter new member name: ";
+            cin.ignore();
+            getline(cin, name);
+            cout << "Enter a membership id for new member: ";
+            getline(cin, membershipId);
+
+            Member newMember(name, membershipId);
+
+            manageMember.addMember(newMember);
+
             break;
+        }
         case 8:
             /* code */
             break;
