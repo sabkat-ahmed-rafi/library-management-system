@@ -2,6 +2,8 @@
 #include <string>
 #include <ctime>
 #include <iomanip>
+#include <sstream>
+
 
 #include "../include/Book.h"
 #include "../include/Library.h"
