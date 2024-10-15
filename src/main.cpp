@@ -165,12 +165,29 @@ int main() {
 
             break;
         }
-        case 8:
-            /* code */
+        case 8: {
+            // Search member with membership id 
+            string membershipId;
+            cout << "Enter the membership id to search: ";
+            cin.ignore();
+            getline(cin, membershipId);
+            Member* foundMember = manageMember.searchMemberById(membershipId);
+            if(foundMember) {
+                cout << "Member with \"" << membershipId << "\" found.";
+            }
             break;
-        case 9: 
-            /* code */
+        }
+        case 9: {
+            // Remove member from library 
+            string membershipId;
+            cout << "Enter membership id to remove: ";
+            cin.ignore();
+            getline(cin, membershipId);
+
+            manageMember.removeMember(membershipId);
+            
             break;
+        }
         case 10:
             library.displayAllBooks();
             break;

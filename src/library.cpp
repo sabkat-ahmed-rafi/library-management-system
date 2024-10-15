@@ -95,5 +95,4 @@ void Library::displayAllLoans() const {
 void Library::addLoan(const string& borrower, const string& bookTitle, const string& loanDate, const string& dueDate) {
     Loan newLoan( borrower, bookTitle, loanDate, dueDate);
     loan.push_back(newLoan); 
-    cout << "Loan added successfully!" << endl;
 }
