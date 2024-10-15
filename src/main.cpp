@@ -78,12 +78,24 @@ int main() {
 
             if(library.searchBookByTitle(title)) {
                 cout << "Book \"" << title << "\" found";
+            } else {
+                cout << "Book with title \"" << title << "\" not found." << endl;
             }
             break;
         }
-        case 4:
-            /* code */
+        case 4: {
+            string author;
+            cout << "Enter the book title: ";
+            cin.ignore();
+            getline(cin, author);
+
+            if(library.searchBookByAuthor(author)) {
+                cout << "Book with author \"" << author << "\" found";
+            } else {
+                cout << "Book with author \"" << author << "\" not found." << endl;
+            }
             break;
+        }
         case 5:
             /* code */
             break;
